@@ -4239,7 +4239,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23804
+  m_Name: pb_Mesh35628
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -4816,6 +4816,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4889,6 +4890,23 @@ Transform:
   m_Father: {fileID: 1558196985}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a2163f2afa049c41bcfad64a4fe48cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensitivityHoriz: 9
+  sensitivityVert: 9
+  minVert: -45
+  maxVert: 45
+  axes: 2
 --- !u!43 &1136661458
 Mesh:
   m_ObjectHideFlags: 0
@@ -5397,8 +5415,8 @@ GameObject:
   - component: {fileID: 1558196983}
   - component: {fileID: 1558196982}
   - component: {fileID: 1558196981}
-  - component: {fileID: 1558196986}
   - component: {fileID: 1558196987}
+  - component: {fileID: 1558196988}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5504,7 +5522,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1558196986
+--- !u!114 &1558196987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558196979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea6e4599e717f5a4e8ee537274c6edff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charController: {fileID: 1558196981}
+--- !u!114 &1558196988
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5521,18 +5552,6 @@ MonoBehaviour:
   minVert: -45
   maxVert: 45
   axes: 1
---- !u!114 &1558196987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558196979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea6e4599e717f5a4e8ee537274c6edff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1561005302
 GameObject:
   m_ObjectHideFlags: 0
