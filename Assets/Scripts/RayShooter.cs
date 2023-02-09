@@ -6,12 +6,23 @@ public class RayShooter : MonoBehaviour
 {
     [SerializeField]
     private Camera cam;
+    [SerializeField]
+    private int aimSize = 16;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
+    void OnGUI() {
+        GUIStyle style = new GUIStyle();
+        style.fontSize = aimSize;
+        float posX = cam.pixelWidth / 2 - aimSize / 4;
+        float posY = cam.pixelHeight / 2 - aimSize / 2;
+
+        GUI.Label(new Rect(posX, posY, aimSize, aimSize), "*", style);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -22,8 +33,30 @@ public class RayShooter : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
+                GameObject hitObject = hit.transform.gameObject;
+                ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
+
+                if (target != null)
+                {
+                    target.ReactToHit();
+                }
+                else {
+                    StartCoroutine(SphereIndicator(hit.point));
+                }
                 // visually indicate where there was a hit
+               
+
             }
         }
+    }
+    private IEnumerator SphereIndicator(Vector3 hitPosition)
+    {
+        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        sphere.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        sphere.transform.position = hitPosition;
+
+        yield return new WaitForSeconds(1);
+
+        Destroy(sphere);
     }
 }
