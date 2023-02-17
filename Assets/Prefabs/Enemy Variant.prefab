@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1696014694992928748, guid: d079cd0e6137a44b58864c3a91ad119a, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Enemy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2264752303812250938, guid: d079cd0e6137a44b58864c3a91ad119a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -110,3 +110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073421dd6f00fc84cb2c2ad882d5a808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laserbeamPrefab: {fileID: 1632552484172126316, guid: c4768779c685ef34d9fc66f91e31abbd, type: 3}
+  fireRate: 2
