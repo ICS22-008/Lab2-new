@@ -4,9 +4,33 @@ using UnityEngine;
 
 public class ReactiveTarget : MonoBehaviour
 {
+<<<<<<< Updated upstream
 
     public void ReactToHit() {
         StartCoroutine(Die());
+=======
+    bool isAlive = true;
+    public void ReactToHit()
+    {
+        if (isAlive) {
+            WanderingAI enemyAI = GetComponent<WanderingAI>();
+            if (enemyAI != null)
+            {
+                enemyAI.ChangeState(EnemyStates.dead);
+            }
+            Animator enemyAnimator = GetComponent<Animator>();
+            if (enemyAnimator != null)
+            {
+                Debug.Log("In the animator");
+                enemyAnimator.SetTrigger("Die");
+            }
+            //StartCoroutine(Die());
+            Messenger.Broadcast(GameEvent.ENEMY_DEAD);
+            isAlive = false;
+        }
+        
+
+>>>>>>> Stashed changes
     }
 
     private IEnumerator Die() {
